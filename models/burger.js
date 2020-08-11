@@ -1,5 +1,5 @@
-const { Sequelize, Model, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('sqlite::memory:');
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require("../app/connection.js");
 
 // Creates a "Burger" model that matches up with DB
 class Burger extends Model {}

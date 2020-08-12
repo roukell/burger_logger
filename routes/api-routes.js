@@ -3,7 +3,7 @@ const Burger = require("../models/burger.js");
 module.exports = (app) => {
 
   app.get("/api/all", (req, res) => {
-    Burger.findAll({}).then((results) => {
+    Burger.findAll( {where: { devour: false }}).then((results) => {
       res.json(results);
     })
   });

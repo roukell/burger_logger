@@ -45,3 +45,8 @@ $.get("/api/all", (data) => {
     }
   }
 });
+
+// get --> save data id $().data('foo', 10)
+// frontend post --> get id $().data('foo')
+// backend post send object back, get id store id in html by json
+// put request get data id in frontend and send to backend 

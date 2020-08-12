@@ -7,13 +7,16 @@
 .cool-font {
   font-family: Shrikhand, cursive;
   font-size: 24px;
-  color: #1da1f2;
+  color: gray;
 }
 
 .jumbotron {
   font-family: Shrikhand, cursive;
   color: white;
-  background-color: #1da1f2;
+  background-color: rgb(50, 114, 199);
+  background-image: url('../assets/img/background-burger.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 input,
@@ -24,9 +27,9 @@ textarea {
 .btn {
   margin: 10px;
   font-family: Shrikhand, cursive;
-  color: #1da1f2;
+  color: gray;
   background-color: white;
-  border-color: #1da1f2;
+  border-color: gray;
   border-style: solid;
   border-width: 2px;
 }
@@ -35,3 +38,4 @@ p {
   margin: 0;
   font-size: 16px;
 }
+

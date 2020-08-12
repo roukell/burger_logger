@@ -1,29 +1,29 @@
 /* global moment */
 
 // When user clicks add-btn
-$("#chirp-submit").on("click", (event) => {
+$("#burger-submit").on("click", (event) => {
   event.preventDefault();
 
-  // Make a newChirp object
-  const newChirp = {
+  // Make a newBurger object
+  const newBurger = {
     author: $("#author").val().trim(),
     body: $("#chirp-box").val().trim(),
     created_at: moment().format("YYYY-MM-DD HH:mm:ss")
   };
 
-  console.log(newChirp);
+  console.log(newBurger);
 
   // Send an AJAX POST-request with jQuery
-  $.post("/api/new", newChirp)
+  $.post("/api/new", newBurger)
     // On success, run the following code
     .then(() => {
 
       const row = $("<div>");
       row.addClass("chirp");
 
-      row.append("<p>" + newChirp.author + " chirped: </p>");
-      row.append("<p>" + newChirp.body + "</p>");
-      row.append("<p>At " + moment(newChirp.created_at).format("h:mma on dddd") + "</p>");
+      row.append("<p>" + newBurger.author + " logged: </p>");
+      row.append("<p>" + newBurger.body + "</p>");
+      row.append("<p>At " + moment(newBurger.created_at).format("h:mma on dddd") + "</p>");
 
       $("#chirp-area").prepend(row);
 
@@ -44,7 +44,7 @@ $.get("/api/all", (data) => {
       const row = $("<div>");
       row.addClass("chirp");
 
-      row.append("<p>" + data[i].author + " chirped.. </p>");
+      row.append("<p>" + data[i].author + " logged.. </p>");
       row.append("<p>" + data[i].body + "</p>");
       row.append("<p>At " + moment(data[i].created_at).format("h:mma on dddd") + "</p>");
 

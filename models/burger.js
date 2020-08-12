@@ -4,7 +4,8 @@ const sequelize = require("../app/connection.js");
 // Creates a "Burger" model that matches up with DB
 class Burger extends Model {}
 Burger.init({
-  name: DataTypes.STRING,
+    author: DataTypes.STRING,
+    body: DataTypes.STRING,
 }, { sequelize, modelName: 'burger'})
 
 

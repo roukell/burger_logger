@@ -18,6 +18,6 @@ module.exports = (app) => {
     }).then((results) => {
       res.end();
     });
-
   });
+  
 };

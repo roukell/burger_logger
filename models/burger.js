@@ -6,8 +6,8 @@ class Burger extends Model {}
 Burger.init({
     author: DataTypes.STRING,
     body: DataTypes.STRING,
+    devour: {type: DataTypes.BOOLEAN, defaultValue: false}
 }, { sequelize, modelName: 'burger'})
-
 
 // Syncs with DB
 Burger.sync();

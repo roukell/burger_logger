@@ -21,7 +21,7 @@ $("#burger-submit").on("click", (event) => {
       row.append("<p>" + newBurger.body + "</p>");
       row.append("<p>On " + moment(newBurger.createdAt).format("MMMM Do YYYY, h:mm:ss a") + "</p>");
 
-      $("#burger-box").prepend(row);
+      $("#burger-area").prepend(row);
     });
 
   // Empty each input box by replacing the value with an empty string

@@ -18,7 +18,7 @@ module.exports = (app) => {
   app.put("/api/devour/:id", (req, res) => {
     Burger.update(
       { devour: true },
-      { where: { _id: req.params.id } }
+      { where: { id: req.params.id } }
     ).then(result => res.end())
   })
 };

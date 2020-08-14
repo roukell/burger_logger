@@ -1,0 +1,55 @@
+<body>
+
+  <div class="jumbotron">
+    <h1 class="text-center">Burger Logger</h1>
+    <h2 class="text-center">Record the burgers that you've eaten</h2>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <form action="/api/new" method="POST">
+        <p class="cool-font">Your Name</p>
+        <input class="form-control" type="text" id="author" name="author" placeholder="Enter Your Name">
+        <br>
+        <p class="cool-font">Burger name</p>
+        <textarea class="form-control" rows="3" id="burger-box" name="burger" placeholder="Enter Burger Here!"></textarea>
+        <button type="submit" id="burger-submit" class="btn btn-lg pull-right">Submit!</button>
+      </div>
+      </form>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <h2>Burgers</h2>
+        <hr>
+        <div id="burger-area">
+          <ul>
+            {{#each burgers}}
+            {{#if devour}}
+            {{> burger-block devour=false}}
+            {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-8 col-sm-offset-2">
+        <h2>Devour area</h2>
+        <hr>
+        <div id="devour-area">
+          <ul>
+            {{#each burgers}}
+            {{#unless devour}}
+            {{> burger-block devour=true}}
+            {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="js/burger.js"></script>
+</body>

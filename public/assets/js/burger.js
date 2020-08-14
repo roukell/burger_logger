@@ -1,0 +1,65 @@
+// When user clicks add-btn
+
+$("#burger-submit").on("click", (event) => {
+  event.preventDefault();
+
+  // Make a newBurger object
+  const newBurger = {
+    author: $("#author").val().trim(),
+    body: $("#burger-box").val().trim(),
+    created_at: moment().format("YYYY-MM-DD HH:mm:ss")
+  };
+
+  // Send an AJAX POST-request with jQuery
+  $.post("/api/new", newBurger)
+    .then(() => {
+      console.log("created new burger");
+      location.reload();
+    });
+});
+
+// When the page loads, grab all burgers
+$.get("/api/all", (data) => {
+  if (data.length !== 0) {
+    for (let i = 0; i < data.length; i++) {
+
+      const row = $("<div>");
+      row.addClass("burger");
+
+      row.append("<p>" + data[i].author + " logged.. </p>");
+      row.append("<p>" + data[i].body + "</p>");
+      row.append("<p>On " + moment(data[i].createdAt).format("MMMM Do YYYY, h:mm:ss a") + "</p>");
+      row.append('<button id="devour-submit" class="d-btn btn-lg pull-right">Devour it!</button>');
+
+      $("#burger-area").prepend(row);
+    }
+  }
+);
+
+// $(document).on("click", "#devour-submit", (event) => {
+//   event.preventDefault();
+//   console.log("devour clicked");
+  
+//   $.get("/api/devour/:id", (data) => {
+//     if (data.length !== 0) {
+//       for (let i = 0; i < data.length; i++) {
+  
+//         const row = $("<div>");
+//         row.addClass("burger");
+  
+//         row.append("<p>" + data[i].author + " logged.. </p>");
+//         row.append("<p>" + data[i].body + "</p>");
+//         row.append("<p>On " + moment(data[i].createdAt).format("MMMM Do YYYY, h:mm:ss a") + "</p>");
+//         row.append('<button id="devour-submit" class="d-btn btn-lg pull-right">Devour it!</button>');
+  
+//         $("#devour-area").prepend(row);
+//       }
+//     }
+//   })
+// })
+// }
+
+// get --> save data id $().data('foo', 10)
+// frontend post --> get id $().data('foo')
+// backend post send object back, get id store id in html by json
+// put request get data id in frontend and send to backend 

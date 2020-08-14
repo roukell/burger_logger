@@ -1,21 +1,25 @@
 const Burger = require("../models/burger.js");
+const express = require("express");
+const router = express.Router();
 
 module.exports = (app) => {
 
-  app.get("/api/all", (req, res) => {
-    Burger.findAll( {where: { devour: false }}).then((results) => {
+  router.get("/api/all", (req, res) => {
+      Burger.findAll({}).then((results) => {
       res.json(results);
     })
   });
 
-  app.post("/api/new", (req, res) => {
+  router.post("/api/new", (req, res) => {
     Burger.create({
       author: req.body.author,
       body: req.body.body
-    }).then(results => res.end());
+    }).then((results) => 
+    res.json(results)
+    );
   });
 
-  app.put("/api/devour/:id", (req, res) => {
+  router.put("/api/devour", (req, res) => {
     Burger.update(
       { devour: true },
       { where: { id: req.params.id } }

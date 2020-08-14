@@ -21,7 +21,7 @@ const objToSql = (ob) => {
         value = "'" + value + "'";
       }
       // e.g. {name: 'Melody'} => ["name='Melody'"]
-      // e.g. {sleepy: true} => ["sleepy=true"]
+      // e.g. {devour: true} => ["devour=true"]
       arr.push(key + "=" + value);
     }
   }

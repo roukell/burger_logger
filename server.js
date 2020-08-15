@@ -1,5 +1,5 @@
 const express = require("express");
-const PORT = process.env.PORT || 8080;
+// const PORT = process.env.PORT || 8080;
 
 const app = express();
 
@@ -22,28 +22,14 @@ const routes = require("./controllers/burgerController.js");
 app.use(routes);
 
 // Start our server so that it can begin listening to client requests.
-const server = app.listen(PORT, () => {
-  // Log (server-side) when our server has started
-  console.log("Server listening on: http://localhost:" + PORT);
-});
+// const server = app.listen(PORT, () => {
+//   // Log (server-side) when our server has started
+//   console.log("Server listening on: http://localhost:" + PORT);
+// });
 
-// Create a WebSocket server
-
-const { Server } = require('ws');
-
-const wss = new Server({ server });
-
-// Handle connections
-
-wss.on('connection', (ws) => {
-  console.log('Client connected');
-  ws.on('close', () => console.log('Client disconnected'));
-});
-
-// Broadcast updates
-
-setInterval(() => {
-  wss.clients.forEach((client) => {
-    client.send(new Date().toTimeString());
-  });
-}, 1000);
+// Create a Socket.io server
+// const app = require('express')();
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
+io.on('connection', () => { console.log("client connected") });
+server.listen(8080);

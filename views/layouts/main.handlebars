@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-		<title>Burger Logger</title>
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="/assets/js/burgers.js"></script>
-		<link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Sunflower:wght@300&display=swap" rel="stylesheet">
-	</head>
-	<body>
-		{{{ body }}}
-	</body>
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	<title>Burger Logger</title>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/assets/js/burgers.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Sunflower:wght@300&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	{{{ body }}}
+
+	<script>
+		{{!-- Create a WebSocket client --}}
+		var HOST = location.origin.replace(/^http/, 'ws')
+		var ws = new WebSocket(HOST);
+		var el;
+
+		ws.onmessage = function (event) {
+			el = document.getElementById('server-time');
+			el.innerHTML = 'Server time: ' + event.data;
+		};
+	</script>
+</body>
+
 </html>

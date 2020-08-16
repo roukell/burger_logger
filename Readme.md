@@ -6,7 +6,7 @@
 
   ## Description
   * Burger Logger is a restaurant app that lets users input the names of burgers they'd like to eat.
-  * Deployed application on Heroku: https://safe-shore-41393.herokuapp.com/
+  * Deployed application on Heroku: https://serene-hamlet-38122.herokuapp.com/
 
   ## Table of Contents
   * [Installation](#installation)

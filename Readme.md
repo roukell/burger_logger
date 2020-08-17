@@ -23,30 +23,7 @@
   ## Usage
   1. Fork this repository to your folder and install dependencies.
   2. Run `node server.js` in Node.js.
-  3. Create a `connection.js` file in `config` folder, and then add the code below:
-     * Due to sensitive information this file is not included in the repo.
-     * Remember to change host, user, password, and database details. 
-  ```
-  const mysql = require("mysql");
-
-const connection = mysql.createConnection({
-   host: "localhost",
-   port: 3306,
-   user: "root",
-   password: "password",
-   database: "burgers_db"
-  });
-
-connection.connect((err) => {
-  if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
-  }
-  console.log("connected as id " + connection.threadId);
-});
-
-module.exports = connection;
-  ```
+  3. Goto `connection.js` file under `config` folder, and then change host, user, password, and database details. 
   4. Go to your localhost in browser, and start using the app.
 
 Alternatively, to use this app directly, click on the Heroku link under [Description](#Description). Click on get started to create notes.

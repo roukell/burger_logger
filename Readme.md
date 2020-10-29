@@ -11,7 +11,7 @@
   https://serene-hamlet-38122.herokuapp.com/
 
   ## Technologies used
-  HTML, CSS, Javascript, Node.js, Express, Express handlebars, mySQL
+  HTML, CSS, JavaScript, Node.js, Express, Express handlebars, mySQL
 
   ## Table of Contents
   * [Installation](#installation)
@@ -31,7 +31,7 @@
   3. Goto `connection.js` file under `config` folder, and then change host, user, password, and database details. 
   4. Go to your localhost in browser, and start using the app.
 
-Alternatively, to use this app directly, click [here](https://serene-hamlet-38122.herokuapp.com/). Click on get started to create notes.
+Alternatively, to use this app directly, click [here](https://serene-hamlet-38122.herokuapp.com/). You can add your favourite burgers to the list and devour it!
 
   ## License
   * MIT

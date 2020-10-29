@@ -6,6 +6,9 @@
 
   ## Description
   * Burger Logger is a restaurant app that allow users to enter their favourite burger name.
+  
+  * Technologies used: HTML, CSS, Javascript, Node.js, Express, Express handlebars, mySQL.
+
   * Deployed application on Heroku: https://serene-hamlet-38122.herokuapp.com/
 
   ## Table of Contents
